@@ -19,33 +19,36 @@
 \section{Clustering Coefficients}
 \subsection{}
 
- $ k_{A, B} = \ell + 1$,    $k_{\ell} = 2 $, so:
+$ k_{A, B} = \ell + 1$, $k_{\ell} = 2 $, so:
 \begin{align*}
- \langle C \rangle& =  \frac{ 1 }{ N } \sum\limits_{ i=1 }^N \frac{ 2 L_i }{ k_i (k_i - 1) } \\
-& =  \frac{ 1 }{ N } \left( \underbrace{\sum\limits_{ A,B } \frac{ 2 \ell }{ (\ell + 1) \ell }}_\text{nodes $A$, $B$}   +   \underbrace{ \sum\limits_{ i=0 }^{N-2} \frac{ 2 \cdot 1 }{ 2 \cdot 1 }}_\text{nodes $l$} \right) \\
-& =  \frac{ 1 }{ N } \left( \frac{ 4 }{ \ell + 1 } + N - 2  \right) \\
-& =  \frac{ 1 }{ N } \left( \frac{ 4 }{ N - 1 } + N - 2  \right) \\
-& =  \frac{ 1 }{ N } \left( \frac{ 4 + (N - 2)(N - 1) }{ N - 1 } \right) \\
-& =  \frac{ 1 }{ N } \left( \frac{ 4 + N^2 - 3N + 2 }{ N - 1 }  \right) \\
-& =  \frac{ N^2 - 3N + 6 }{ N^2 - N }. \\
+\langle C \rangle & = \frac{ 1 }{ N } \sum\limits_{ i=1 }^N \frac{ 2 L_i }{ k_i (k_i - 1) } \\ \\
+& = \frac{ 1 }{ N } \left( \underbrace{\sum\limits_{ A,B } \frac{ 2 \ell }{ (\ell + 1) \ell }}_\text{nodes $A$, $B$} + \underbrace{ \sum\limits_{ i=0 }^{N-2} \frac{ 2 \cdot 1 }{ 2 \cdot 1 }}_\text{nodes $l$} \right) \\ \\
+& = \frac{ 1 }{ N } \left( \frac{ 4 }{ \ell + 1 } + N - 2  \right) \\ \\
+& = \frac{ 1 }{ N } \left( \frac{ 4 }{ N - 1 } + N - 2  \right) \\ \\
+& = \frac{ 1 }{ N } \left( \frac{ 4 + (N - 2)(N - 1) }{ N - 1 } \right) \\ \\
+& = \frac{ 1 }{ N } \left( \frac{ 4 + N^2 - 3N + 2 }{ N - 1 }  \right) \\ \\
+& = \frac{ N^2 - 3N + 6 }{ N^2 - N }. \\ \\
 \end{align*}
 
 \subsection{}
+\text{According to hint:}
 \begin{align*}
-& & &\text{According to hint:}\\
- C_{\Delta} &= \frac{ 3 \cdot \# triangles }{ \# triples }. & \# triples &= \sum\limits_{ i=1 }^N \frac{ k_i (k_i - 1) }{ 2 }\\
-\text{In the given graph},  \# triangles &= \ell  \text{, therefore: }  & C_{\Delta} &=  \frac{ 3 \ell }{ \sum\limits_{ i=1 }^N \frac{ k_i (k_i - 1) }{ 2 }}& 
- \end{align*}
+C_{\Delta} &= \frac{ 3 \cdot \# triangles }{ \# triples },
+& \# triples = \sum\limits_{ i=1 }^N \frac{ k_i (k_i - 1) }{ 2 }.\\
+\end{align*}
+
+In the given graph, $ \# $ triangles = $ \ell $, therefore:
+$$ C_{\Delta} = \frac{ 3 \ell }{ \sum\limits_{ i=1 }^N \frac{ k_i (k_i - 1) }{ 2 }}. $$
  
 From problem 1.1: $ k_{A, B} = \ell + 1$,    $k_{\ell} = 2 $, so:
 \begin{align*}
- C_{\Delta} &=   \frac{ 3 \ell }{ \sum\limits_{ A,B} \frac{ (\ell + 1) \ell }{ 2 } + \sum\limits_{ i=0 }^{N-2} \frac{ 2 \cdot 1 }{ 2 }} \\
-& =\frac{ 3 \ell }{ \ell (\ell + 1) + N - 2 } \\
-& = \frac{ 3 (N - 2) }{ (N-1)(N-2) + N - 2 } \\
-& = \frac{ 3 (N - 2) }{ N^2 - 3N + 2 + N - 2 } \\
-& = \frac{ 3 (N - 2) }{ N^2 - 2N } \\
-& = \frac{ 3 (N - 2) }{ N (N - 2) } \\
-& = \frac{ 3 }{ N } \\
+ C_{\Delta} &=   \frac{ 3 \ell }{ \sum\limits_{ A,B} \frac{ (\ell + 1) \ell }{ 2 } + \sum\limits_{ i=0 }^{N-2} \frac{ 2 \cdot 1 }{ 2 }} \\ \\
+& =\frac{ 3 \ell }{ \ell (\ell + 1) + N - 2 } \\ \\
+& = \frac{ 3 (N - 2) }{ (N-1)(N-2) + N - 2 } \\ \\
+& = \frac{ 3 (N - 2) }{ N^2 - 3N + 2 + N - 2 } \\ \\
+& = \frac{ 3 (N - 2) }{ N^2 - 2N } \\ \\
+& = \frac{ 3 (N - 2) }{ N (N - 2) } \\ \\
+& = \frac{ 3 }{ N }.
 \end{align*}
 
 
