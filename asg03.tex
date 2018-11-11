@@ -9,9 +9,9 @@
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lhead{\textbf{Complex Network Analysis} \\ Assignment 2\\}
+\lhead{\textbf{Complex Network Analysis} \\ Assignment 3\\}
 \rhead{Maria Kagkeli \\ Maria Regina Lily \\ Mihai Verzan}
-\headheight 12pc
+\headheight 10pc
 \voffset -10pc
 
 \begin{document}
@@ -19,29 +19,35 @@
 \section{Clustering Coefficients}
 \subsection{}
 
-$$ \langle C \rangle
-= \frac{ 1 }{ N } \sum\limits_{ i=1 }^N \frac{ 2 L_i }{ k_i (k_i - 1) } $$
-$$ = \frac{ 1 }{ N } (\sum\limits_{ i=0 }^N \frac{ 2 \ell }{ (\ell + 1) \ell } + \sum\limits_{ i=0 }^N \frac{ 2 \cdot 1 }{ 2 \cdot 1 }) $$
-$$ = \frac{ 1 }{ N } (\frac{ 4 }{ \ell + 1 } + N - 2 ) $$
-$$ = \frac{ 1 }{ N } (\frac{ 4 }{ N - 1 } + N - 2 ) $$
-$$ = \frac{ 1 }{ N } (\frac{ 4 + (N - 2)(N - 1) }{ N - 1 }) $$
-$$ = \frac{ 1 }{ N } (\frac{ 4 + N^2 - 3N + 2 }{ N - 1 }) $$
-$$ = \frac{ N^2 - 3N + 6 }{ N^2 - N }. $$
+ $ k_{A, B} = \ell + 1$,    $k_{\ell} = 2 $, so:
+\begin{align*}
+ \langle C \rangle& =  \frac{ 1 }{ N } \sum\limits_{ i=1 }^N \frac{ 2 L_i }{ k_i (k_i - 1) } \\
+& =  \frac{ 1 }{ N } \left( \underbrace{\sum\limits_{ A,B } \frac{ 2 \ell }{ (\ell + 1) \ell }}_\text{nodes $A$, $B$}   +   \underbrace{ \sum\limits_{ i=0 }^{N-2} \frac{ 2 \cdot 1 }{ 2 \cdot 1 }}_\text{nodes $l$} \right) \\
+& =  \frac{ 1 }{ N } \left( \frac{ 4 }{ \ell + 1 } + N - 2  \right) \\
+& =  \frac{ 1 }{ N } \left( \frac{ 4 }{ N - 1 } + N - 2  \right) \\
+& =  \frac{ 1 }{ N } \left( \frac{ 4 + (N - 2)(N - 1) }{ N - 1 } \right) \\
+& =  \frac{ 1 }{ N } \left( \frac{ 4 + N^2 - 3N + 2 }{ N - 1 }  \right) \\
+& =  \frac{ N^2 - 3N + 6 }{ N^2 - N }. \\
+\end{align*}
 
 \subsection{}
-$$ C_{\Delta} = \frac{ 3 \cdot \# triangles }{ \# triples }. $$
-According to the hint,
-$$ \# triples = \sum\limits_{ i=1 }^N \frac{ k_i (k_i - 1) }{ 2 } $$
-In the given graph, $ \# triangles = \ell $, so
-$$ C_{\Delta} = \frac{ 3 \ell }{ \sum\limits_{ i=1 }^N \frac{ k_i (k_i - 1) }{ 2 }} $$
-From problem 1.1: $ k_{A, B} = \ell + 1, k_{\ell} = 2 $, so
-$$ C_{\Delta} = \frac{ 3 \ell }{ \sum\limits_{ i=0 }^1 \frac{ (\ell + 1) \ell }{ 2 } + \sum\limits_{ 2 }^N \frac{ 2 \cdot 1 }{ 2 }} $$
-$$ = \frac{ 3 \ell }{ \ell (\ell + 1) + N - 2 } $$
-$$ = \frac{ 3 (N - 2) }{ (N-1)(N-2) + N - 2 } $$
-$$ = \frac{ 3 (N - 2) }{ N^2 - 3N + 2 + N - 2 } $$
-$$ = \frac{ 3 (N - 2) }{ N^2 - 2N } $$
-$$ = \frac{ 3 (N - 2) }{ N (N - 2) } $$
-$$ = \frac{ 3 }{ N }. $$
+\begin{align*}
+& & &\text{According to hint:}\\
+ C_{\Delta} &= \frac{ 3 \cdot \# triangles }{ \# triples }. & \# triples &= \sum\limits_{ i=1 }^N \frac{ k_i (k_i - 1) }{ 2 }\\
+\text{In the given graph},  \# triangles &= \ell  \text{, therefore: }  & C_{\Delta} &=  \frac{ 3 \ell }{ \sum\limits_{ i=1 }^N \frac{ k_i (k_i - 1) }{ 2 }}& 
+ \end{align*}
+ 
+From problem 1.1: $ k_{A, B} = \ell + 1$,    $k_{\ell} = 2 $, so:
+\begin{align*}
+ C_{\Delta} &=   \frac{ 3 \ell }{ \sum\limits_{ A,B} \frac{ (\ell + 1) \ell }{ 2 } + \sum\limits_{ i=0 }^{N-2} \frac{ 2 \cdot 1 }{ 2 }} \\
+& =\frac{ 3 \ell }{ \ell (\ell + 1) + N - 2 } \\
+& = \frac{ 3 (N - 2) }{ (N-1)(N-2) + N - 2 } \\
+& = \frac{ 3 (N - 2) }{ N^2 - 3N + 2 + N - 2 } \\
+& = \frac{ 3 (N - 2) }{ N^2 - 2N } \\
+& = \frac{ 3 (N - 2) }{ N (N - 2) } \\
+& = \frac{ 3 }{ N } \\
+\end{align*}
+
 
 \subsection{}
 As $ N \to \infty $, the average clustering coefficient $ \langle C \rangle = (\frac{ N^2 - 3N + 6 }{ N^2 - N }) $ goes to $ 1 $. These reflects the fact that nodes $ A $ and $ B $ are connected to all others, and as the number of nodes goes to infinity, these connections dominate the coefficient. The global clustering coefficient $ C_{\Delta} = \frac{ 3 }{ N } $ goes to 0, meaning that the number of triangles grows much more slowly than the number of triples. These limits show that in some cases, there is a very clear difference between the two formulations. 
