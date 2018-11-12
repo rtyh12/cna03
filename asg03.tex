@@ -16,7 +16,11 @@
 
 \begin{document}
 
+
+
+% problem 1
 \section{Clustering Coefficients}
+
 \subsection{}
 
 $ k_{A, B} = \ell + 1$, $k_{\ell} = 2 $, so:
@@ -31,6 +35,7 @@ $ k_{A, B} = \ell + 1$, $k_{\ell} = 2 $, so:
 \end{align*}
 
 \subsection{}
+
 \text{According to hint:}
 \begin{align*}
 C_{\Delta} &= \frac{ 3 \cdot \# triangles }{ \# triples },
@@ -51,10 +56,64 @@ From problem 1.1: $ k_{A, B} = \ell + 1$,    $k_{\ell} = 2 $, so:
 & = \frac{ 3 }{ N }.
 \end{align*}
 
-
 \subsection{}
 As $ N \to \infty $, the average clustering coefficient $ \langle C \rangle = (\frac{ N^2 - 3N + 6 }{ N^2 - N }) $ goes to $ 1 $. These reflects the fact that nodes $ A $ and $ B $ are connected to all others, and as the number of nodes goes to infinity, these connections dominate the coefficient. The global clustering coefficient $ C_{\Delta} = \frac{ 3 }{ N } $ goes to 0, meaning that the number of triangles grows much more slowly than the number of triples. These limits show that in some cases, there is a very clear difference between the two formulations. 
 
 \newpage
+
+
+
+% problem 2
+\section{Watts-Strogatz Network Model}
+
+\subsection{}
+
+Minimum average clustering coefficient: when $ p = 0 $: $ \langle C(0) \rangle = \frac{ 3(2m-2) }{ 4(2m-1) } $. As m grows, $ \langle C(0) \rangle \to \frac{ 3 }{ 4 } $.
+
+Maximum average clustering coefficient: when $ p = 1 $. The network becomes random: $ \langle C(1) \rangle = \frac{ 2m }{ N } $. 
+
+\subsection{}
+
+Minimum average shortest path: when $ p = 0 $: $ \langle d(0) \rangle = \frac{ N }{ 4m } $.
+
+Maximum average shortest path: when $ p = 1 $: $ \langle d(1) \rangle = \frac{ \ln N }{ \ln 2m } $.
+
+\subsection{}
+Find $ N $ by counting the nodes: $ N = 12 $.
+
+Find $ m $ by counting how many neighbouring nodes each node is connected to. While not all links will be present due to the random rewiring, a large portion of nodes are connected to the nodes right next to themselves, as well as the next nodes over, so $ m = 2 $ is a reasonable estimate.
+
+Out of the 24 initial links, 21 are preserved and 3 have been rewired. Therefore we can estimate $ p \approx \frac{ 3 }{ 21 } = \frac{ 1 }{ 7 } $.
+
+\newpage
+
+
+
+% problem 3
+\section{Kleinberg Network Model}
+
+Note: plots and discussion also given in asg03-3.ipynb.
+
+\subsection{}
+-- implemented in asg03-3.ipynb --
+
+\subsection{}
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{img/2.png}
+\end{figure}
+
+\subsection{}
+For higher values of $ a $ ($ a=4 $, $ a=5 $), the average shortest distance $ <d(N)> $ grows approximately proportional to $ log(N) $. This means, the Kleinberg model generates networks with small-world-behaviour for higher values of $ a $
+
+\subsection{}
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{img/4.png}
+\end{figure}
+
+We can see here that the average clustering coefficient for the lower values of $ \alpha $, ($ \alpha = 0, 1, 2 $), the average clustering coefficient is inversely proportional to the $ log(N) $
+
+For the higher values of $ \alpha $, ($ \alpha = 5, 4, 3 $), the average clustering coefficient increase significantly between $ N=10 $ and $ N=100 $. But generally, the average clustering coefficient stays rather low for higher values $ \alpha $.
+
+This reflects the weighted random selection of the extra link that would be added to each node. The neighbors $ y $ of a node $ x $ would have the distance $ d(x,y)=1 $, which would give these neighbors the highest chances of being picked as target node of the extra link. As a result, the chances of the graph actually getting new links for high values of $ \alpha $ is rather small. If no new link is created, then the average clustering coefficient would be $ 0 $ , or near to $ 0 $. (As we found in the previous assignment, a grid-like lattice network has the average clustering coefficient of $ 0 $)
 
 \end{document}
